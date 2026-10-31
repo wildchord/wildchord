@@ -1,0 +1,158 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 360" width="100%" height="100%" style="background:#070A12; border-radius: 8px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Courier New', monospace;">
+  <defs>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0E172E" />
+      <stop offset="100%" stop-color="#070C1B" />
+    </linearGradient>
+    <filter id="cyanGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Title Bar -->
+  <g transform="translate(30, 24)">
+    <circle cx="6" cy="6" r="3.5" fill="#00F0FF" filter="url(#cyanGlow)" />
+    <text x="18" y="10" fill="#38BDF8" font-size="11" font-weight="700" letter-spacing="1.5" font-family="monospace">PORTFOLIO SYSTEMS &amp; IMPLEMENTED ARCHITECTURES</text>
+  </g>
+
+  <!-- 4 Standalone Project Architecture Cards (No fictional inter-connecting pipeline arrows) -->
+
+  <!-- Card 1: Bot_codes (Rover Firmware) -->
+  <g transform="translate(30, 52)">
+    <rect width="220" height="280" fill="url(#cardGrad)" stroke="#1E293B" stroke-width="1.2" rx="6" />
+    <rect width="220" height="30" fill="#0F1B38" rx="6" />
+    <rect y="26" width="220" height="4" fill="#0F1B38" />
+    <circle cx="16" cy="15" r="3" fill="#00F0FF" />
+    <text x="28" y="19" fill="#00F0FF" font-size="10" font-weight="700" font-family="monospace">01 // ROVER FIRMWARE</text>
+
+    <g transform="translate(15, 46)">
+      <text x="0" y="0" fill="#E2E8F0" font-size="10.5" font-weight="600">Hardware &amp; Microcontrollers</text>
+      <text x="0" y="14" fill="#94A3B8" font-size="9">ESP32 (Dual-Core 240MHz)</text>
+      <text x="0" y="27" fill="#94A3B8" font-size="9">Arduino Uno (ATmega328P)</text>
+
+      <line x1="0" y1="39" x2="190" y2="39" stroke="#1E293B" stroke-width="1" />
+
+      <text x="0" y="53" fill="#E2E8F0" font-size="10.5" font-weight="600">Signal Ingestion &amp; Deadband</text>
+      <text x="0" y="67" fill="#94A3B8" font-size="9">FlySky FS-i6 2.4GHz RF</text>
+      <text x="0" y="80" fill="#94A3B8" font-size="9">PWM Pulse Capture (CH1/CH2)</text>
+      <text x="0" y="93" fill="#94A3B8" font-size="9">Deadzone: 1400μs – 1600μs</text>
+
+      <line x1="0" y1="105" x2="190" y2="105" stroke="#1E293B" stroke-width="1" />
+
+      <text x="0" y="119" fill="#E2E8F0" font-size="10.5" font-weight="600">Actuation &amp; Teleoperation</text>
+      <text x="0" y="133" fill="#94A3B8" font-size="9">L298N Dual H-Bridge Drivers</text>
+      <text x="0" y="146" fill="#94A3B8" font-size="9">Bi-directional DC Motors</text>
+      <text x="0" y="159" fill="#94A3B8" font-size="9">ESP32 Bluetooth Serial (SPP)</text>
+
+      <line x1="0" y1="172" x2="190" y2="172" stroke="#1E293B" stroke-width="1" />
+      <text x="0" y="188" fill="#00F0FF" font-size="8.5" font-family="monospace">STACK: C++ / ARDUINO CORE</text>
+      <text x="0" y="200" fill="#64748B" font-size="8" font-family="monospace">REPO: wildchord/Bot_codes</text>
+    </g>
+  </g>
+
+  <!-- Card 2: AI-Powered IoT Cybersecurity -->
+  <g transform="translate(265, 52)">
+    <rect width="225" height="280" fill="url(#cardGrad)" stroke="#1E293B" stroke-width="1.2" rx="6" />
+    <rect width="225" height="30" fill="#0F1B38" rx="6" />
+    <rect y="26" width="225" height="4" fill="#0F1B38" />
+    <circle cx="16" cy="15" r="3" fill="#38BDF8" />
+    <text x="28" y="19" fill="#38BDF8" font-size="10" font-weight="700" font-family="monospace">02 // IOT THREAT DEFENSE</text>
+
+    <g transform="translate(15, 46)">
+      <text x="0" y="0" fill="#E2E8F0" font-size="10.5" font-weight="600">Telemetry &amp; Broker</text>
+      <text x="0" y="14" fill="#94A3B8" font-size="9">MQTT Protocol (Mosquitto)</text>
+      <text x="0" y="27" fill="#94A3B8" font-size="9">Topic: iot/device01/telemetry</text>
+      <text x="0" y="40" fill="#94A3B8" font-size="9">Async Subscriber &amp; Mapper</text>
+
+      <line x1="0" y1="52" x2="195" y2="52" stroke="#1E293B" stroke-width="1" />
+
+      <text x="0" y="66" fill="#E2E8F0" font-size="10.5" font-weight="600">ML Threat Classification</text>
+      <text x="0" y="80" fill="#94A3B8" font-size="9">RandomForestClassifier</text>
+      <text x="0" y="93" fill="#94A3B8" font-size="9">Detection: Floods, DDoS, Scans</text>
+      <text x="0" y="106" fill="#94A3B8" font-size="9">Explainability: SHAP Feature Imp.</text>
+
+      <line x1="0" y1="118" x2="195" y2="118" stroke="#1E293B" stroke-width="1" />
+
+      <text x="0" y="132" fill="#E2E8F0" font-size="10.5" font-weight="600">RAG Playbooks &amp; Dashboard</text>
+      <text x="0" y="146" fill="#94A3B8" font-size="9">Section-Matched NIST Retrieval</text>
+      <text x="0" y="159" fill="#94A3B8" font-size="9">Gemini LLM Mitigation Engine</text>
+      <text x="0" y="172" fill="#94A3B8" font-size="9">FastAPI + SQLite + Streamlit UI</text>
+
+      <line x1="0" y1="184" x2="195" y2="184" stroke="#1E293B" stroke-width="1" />
+      <text x="0" y="200" fill="#38BDF8" font-size="8.5" font-family="monospace">STACK: PYTHON / SCIKIT / FASTAPI</text>
+      <text x="0" y="212" fill="#64748B" font-size="8" font-family="monospace">REPO: IoT-Cybersecurity-System</text>
+    </g>
+  </g>
+
+  <!-- Card 3: ResearchPilot -->
+  <g transform="translate(505, 52)">
+    <rect width="225" height="280" fill="url(#cardGrad)" stroke="#1E293B" stroke-width="1.2" rx="6" />
+    <rect width="225" height="30" fill="#0F1B38" rx="6" />
+    <rect y="26" width="225" height="4" fill="#0F1B38" />
+    <circle cx="16" cy="15" r="3" fill="#0066FF" />
+    <text x="28" y="19" fill="#60A5FA" font-size="10" font-weight="700" font-family="monospace">03 // RESEARCHPILOT</text>
+
+    <g transform="translate(15, 46)">
+      <text x="0" y="0" fill="#E2E8F0" font-size="10.5" font-weight="600">Document Ingestion Pipeline</text>
+      <text x="0" y="14" fill="#94A3B8" font-size="9">PyPDF Stream Processing</text>
+      <text x="0" y="27" fill="#94A3B8" font-size="9">In-memory BytesIO Buffer</text>
+      <text x="0" y="40" fill="#94A3B8" font-size="9">Structured Page Extraction</text>
+
+      <line x1="0" y1="52" x2="195" y2="52" stroke="#1E293B" stroke-width="1" />
+
+      <text x="0" y="66" fill="#E2E8F0" font-size="10.5" font-weight="600">AI Synthesis &amp; Gap Discovery</text>
+      <text x="0" y="80" fill="#94A3B8" font-size="9">Google Gemini API Integration</text>
+      <text x="0" y="93" fill="#94A3B8" font-size="9">Structured Schema JSON Prompts</text>
+      <text x="0" y="106" fill="#94A3B8" font-size="9">Methodology &amp; Gap Extraction</text>
+
+      <line x1="0" y1="118" x2="195" y2="118" stroke="#1E293B" stroke-width="1" />
+
+      <text x="0" y="132" fill="#E2E8F0" font-size="10.5" font-weight="600">Phased Roadmap Planning</text>
+      <text x="0" y="146" fill="#94A3B8" font-size="9">3 Candidate Research Paths</text>
+      <text x="0" y="159" fill="#94A3B8" font-size="9">4-Phase Experimental Plan</text>
+      <text x="0" y="172" fill="#94A3B8" font-size="9">FastAPI Backend + Streamlit UI</text>
+
+      <line x1="0" y1="184" x2="195" y2="184" stroke="#1E293B" stroke-width="1" />
+      <text x="0" y="200" fill="#60A5FA" font-size="8.5" font-family="monospace">STACK: FASTAPI / PYPDF / GEMINI</text>
+      <text x="0" y="212" fill="#64748B" font-size="8" font-family="monospace">REPO: wildchord/RESEARCH_PILOT</text>
+    </g>
+  </g>
+
+  <!-- Card 4: Gesture Presentation Controller -->
+  <g transform="translate(745, 52)">
+    <rect width="225" height="280" fill="url(#cardGrad)" stroke="#1E293B" stroke-width="1.2" rx="6" />
+    <rect width="225" height="30" fill="#0F1B38" rx="6" />
+    <rect y="26" width="225" height="4" fill="#0F1B38" />
+    <circle cx="16" cy="15" r="3" fill="#10B981" />
+    <text x="28" y="19" fill="#34D399" font-size="10" font-weight="700" font-family="monospace">04 // GESTURE VISION</text>
+
+    <g transform="translate(15, 46)">
+      <text x="0" y="0" fill="#E2E8F0" font-size="10.5" font-weight="600">Pre-trained Vision Model</text>
+      <text x="0" y="14" fill="#94A3B8" font-size="9">Keras Deep Learning Backbone</text>
+      <text x="0" y="27" fill="#94A3B8" font-size="9">Google Teachable Machine Export</text>
+      <text x="0" y="40" fill="#94A3B8" font-size="9">Model Artifact: keras_model.h5</text>
+
+      <line x1="0" y1="52" x2="195" y2="52" stroke="#1E293B" stroke-width="1" />
+
+      <text x="0" y="66" fill="#E2E8F0" font-size="10.5" font-weight="600">5-Class Gesture Mapping</text>
+      <text x="0" y="80" fill="#94A3B8" font-size="9">0: Open Palm → Next Slide (Right)</text>
+      <text x="0" y="93" fill="#94A3B8" font-size="9">1: Fist → Previous Slide (Left)</text>
+      <text x="0" y="106" fill="#94A3B8" font-size="9">2: Thumbs Up → F5 Fullscreen</text>
+
+      <line x1="0" y1="118" x2="195" y2="118" stroke="#1E293B" stroke-width="1" />
+
+      <text x="0" y="132" fill="#E2E8F0" font-size="10.5" font-weight="600">Reference Runtime Pipeline</text>
+      <text x="0" y="146" fill="#94A3B8" font-size="9">OpenCV Live Webcam Feed</text>
+      <text x="0" y="159" fill="#94A3B8" font-size="9">Confidence Threshold: ≥ 85%</text>
+      <text x="0" y="172" fill="#94A3B8" font-size="9">Cooldown Debounce Lockout: 1.2s</text>
+
+      <line x1="0" y1="184" x2="195" y2="184" stroke="#1E293B" stroke-width="1" />
+      <text x="0" y="200" fill="#34D399" font-size="8.5" font-family="monospace">STACK: OPENCV / KERAS / NUMPY</text>
+      <text x="0" y="212" fill="#64748B" font-size="8" font-family="monospace">REPO: Presentation_control</text>
+    </g>
+  </g>
+</svg>

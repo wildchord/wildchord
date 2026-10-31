@@ -1,0 +1,202 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="100%" height="100%" style="background:#070A12; border-radius: 8px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'SF Pro Display', Roboto, 'Courier New', monospace;">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050811" />
+      <stop offset="50%" stop-color="#080E1E" />
+      <stop offset="100%" stop-color="#04070D" />
+    </linearGradient>
+
+    <!-- Cyan Glow Filter -->
+    <filter id="glowCyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Technical Grid Pattern -->
+    <pattern id="techGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#00F0FF" stroke-width="0.5" stroke-opacity="0.07" />
+      <circle cx="0" cy="0" r="1" fill="#00F0FF" fill-opacity="0.25" />
+    </pattern>
+
+    <!-- Linear Gradient for Accents -->
+    <linearGradient id="cyanBlueGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F0FF" />
+      <stop offset="100%" stop-color="#0066FF" />
+    </linearGradient>
+
+    <linearGradient id="accentLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F0FF" stop-opacity="0.8" />
+      <stop offset="70%" stop-color="#0066FF" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#00F0FF" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1200" height="320" fill="url(#bgGrad)" />
+  <rect width="1200" height="320" fill="url(#techGrid)" />
+
+  <!-- Outer Technical Frame & Corner Reticles -->
+  <rect x="15" y="15" width="1170" height="290" fill="none" stroke="#00F0FF" stroke-width="1" stroke-opacity="0.2" rx="4" />
+  
+  <!-- Corner Reticle Highlights -->
+  <path d="M 15 35 L 15 15 L 35 15" fill="none" stroke="#00F0FF" stroke-width="2.5" />
+  <path d="M 1185 35 L 1185 15 L 1165 15" fill="none" stroke="#00F0FF" stroke-width="2.5" />
+  <path d="M 15 285 L 15 305 L 35 305" fill="none" stroke="#00F0FF" stroke-width="2.5" />
+  <path d="M 1185 285 L 1185 305 L 1165 305" fill="none" stroke="#00F0FF" stroke-width="2.5" />
+
+  <!-- Background Kinematic & Vector Schematics (Left) -->
+  <g opacity="0.22" transform="translate(60, 40)">
+    <!-- Base Coordinate Frame -->
+    <line x1="0" y1="200" x2="60" y2="200" stroke="#00F0FF" stroke-width="1.5" stroke-dasharray="2 2" />
+    <line x1="0" y1="200" x2="0" y2="140" stroke="#00F0FF" stroke-width="1.5" stroke-dasharray="2 2" />
+    <circle cx="0" cy="200" r="4" fill="#00F0FF" />
+    <text x="68" y="204" fill="#00F0FF" font-size="9" font-family="monospace">X₀</text>
+    <text x="-4" y="132" fill="#00F0FF" font-size="9" font-family="monospace">Z₀</text>
+
+    <!-- Link 1 & Joint 1 -->
+    <line x1="0" y1="200" x2="90" y2="110" stroke="#00F0FF" stroke-width="2" />
+    <circle cx="90" cy="110" r="6" fill="#070A12" stroke="#00F0FF" stroke-width="2" />
+    <circle cx="90" cy="110" r="2.5" fill="#00F0FF" />
+    <path d="M 30 200 A 30 30 0 0 0 21 179" fill="none" stroke="#0066FF" stroke-width="1" />
+    <text x="32" y="185" fill="#38BDF8" font-size="8" font-family="monospace">θ₁</text>
+
+    <!-- Link 2 & Joint 2 -->
+    <line x1="90" y1="110" x2="190" y2="60" stroke="#00F0FF" stroke-width="2" />
+    <circle cx="190" cy="60" r="5" fill="#070A12" stroke="#00F0FF" stroke-width="2" />
+    <circle cx="190" cy="60" r="2" fill="#00F0FF" />
+
+    <!-- Link 3 / End Effector Tool Center Point (TCP) -->
+    <line x1="190" y1="60" x2="250" y2="90" stroke="#00F0FF" stroke-width="1.5" stroke-dasharray="3 3" />
+    <circle cx="250" cy="90" r="3" fill="#00F0FF" filter="url(#glowCyan)" />
+    <path d="M 245 85 L 255 95 M 245 95 L 255 85" stroke="#00F0FF" stroke-width="1" />
+    <text x="258" y="93" fill="#00F0FF" font-size="8" font-family="monospace">TCP [X,Y,Z]</text>
+
+    <!-- Subtle Kinematic Arc Envelope -->
+    <path d="M 0 200 A 250 250 0 0 1 230 40" fill="none" stroke="#0066FF" stroke-width="0.75" stroke-dasharray="4 6" opacity="0.6" />
+  </g>
+
+  <!-- Right-side Technical Specifications Card -->
+  <g transform="translate(860, 42)">
+    <rect x="0" y="0" width="300" height="236" fill="#0A1122" fill-opacity="0.75" stroke="#1E293B" stroke-width="1" rx="4" />
+    
+    <!-- Card Header Bar -->
+    <rect x="0" y="0" width="300" height="26" fill="#0E1A33" rx="4" />
+    <circle cx="14" cy="13" r="3" fill="#00F0FF" filter="url(#glowCyan)" />
+    <text x="26" y="17" fill="#38BDF8" font-size="10" font-weight="700" letter-spacing="1" font-family="monospace">SYSTEM HARDWARE &amp; COMMS SPEC</text>
+
+    <!-- Signal Oscilloscope Trace (Calibrated PWM Pulse Widths) -->
+    <g transform="translate(15, 40)">
+      <text x="0" y="0" fill="#64748B" font-size="8.5" font-family="monospace">ACTUATOR PWM [CH1 / CH2 DUAL H-BRIDGE]</text>
+      <!-- Waveform background -->
+      <rect x="0" y="6" width="270" height="42" fill="#050914" stroke="#172554" stroke-width="0.8" rx="2" />
+      <line x1="0" y1="27" x2="270" y2="27" stroke="#1E293B" stroke-width="0.5" stroke-dasharray="2 4" />
+      <!-- Square / PWM Waveform -->
+      <path d="M 5 38 L 25 38 L 25 14 L 65 14 L 65 38 L 95 38 L 95 14 L 145 14 L 145 38 L 175 38 L 175 14 L 215 14 L 215 38 L 265 38" 
+            fill="none" stroke="#00F0FF" stroke-width="1.8" filter="url(#glowCyan)" />
+      <text x="5" y="44" fill="#00F0FF" font-size="7" font-family="monospace">1500μs [DEADZONE: 1400-1600μs]</text>
+      <text x="208" y="44" fill="#38BDF8" font-size="7" font-family="monospace">50 Hz // 25ms</text>
+    </g>
+
+    <!-- System Metrics Readout -->
+    <g transform="translate(15, 108)">
+      <line x1="0" y1="0" x2="270" y2="0" stroke="#1E293B" stroke-width="1" />
+      
+      <text x="0" y="16" fill="#64748B" font-size="8.5" font-family="monospace">HARDWARE INTERFACES</text>
+      <text x="135" y="16" fill="#F1F5F9" font-size="8.5" font-family="monospace">UART • SPI • I2C • GPIO</text>
+
+      <text x="0" y="34" fill="#64748B" font-size="8.5" font-family="monospace">RF &amp; WIRELESS</text>
+      <text x="135" y="34" fill="#00F0FF" font-size="8.5" font-family="monospace">2.4GHz AFHDS 2A • BLE SPP</text>
+
+      <text x="0" y="52" fill="#64748B" font-size="8.5" font-family="monospace">PERCEPTION MODELS</text>
+      <text x="135" y="52" fill="#38BDF8" font-size="8.5" font-family="monospace">KERAS CV • RANDOM FOREST</text>
+
+      <text x="0" y="70" fill="#64748B" font-size="8.5" font-family="monospace">RAG MITIGATION</text>
+      <text x="135" y="70" fill="#10B981" font-size="8.5" font-family="monospace">NIST &amp; INCIDENT PLAYBOOKS</text>
+
+      <text x="0" y="88" fill="#64748B" font-size="8.5" font-family="monospace">DESIGN PATTERN</text>
+      <text x="135" y="88" fill="#F1F5F9" font-size="8.5" font-family="monospace">CYBER-PHYSICAL EDGE-TO-CLOUD</text>
+    </g>
+
+    <!-- Bottom Decorative Bar -->
+    <g transform="translate(15, 218)">
+      <rect x="0" y="0" width="12" height="4" fill="#00F0FF" />
+      <rect x="16" y="0" width="12" height="4" fill="#00F0FF" />
+      <rect x="32" y="0" width="12" height="4" fill="#00F0FF" />
+      <rect x="48" y="0" width="12" height="4" fill="#0066FF" />
+      <rect x="64" y="0" width="12" height="4" fill="#0066FF" />
+      <rect x="80" y="0" width="12" height="4" fill="#1E293B" />
+      <text x="105" y="5" fill="#64748B" font-size="7.5" font-family="monospace">HARDWARE: ESP32 / ARDUINO / L298N</text>
+    </g>
+  </g>
+
+  <!-- Central Header & Identity Section -->
+  <g transform="translate(60, 52)">
+    <!-- Top System Identification Tag -->
+    <g>
+      <rect x="0" y="0" width="375" height="22" fill="#0C152B" stroke="#00F0FF" stroke-opacity="0.4" stroke-width="1" rx="3" />
+      <circle cx="10" cy="11" r="3" fill="#00F0FF" filter="url(#glowCyan)" />
+      <text x="20" y="15" fill="#00F0FF" font-size="9.5" font-weight="700" letter-spacing="1.5" font-family="monospace">PORTFOLIO // ROBOTICS &amp; ARTIFICIAL INTELLIGENCE</text>
+    </g>
+
+    <!-- Candidate Name -->
+    <text x="0" y="78" fill="#FFFFFF" font-size="38" font-weight="800" letter-spacing="2" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+      AISHNI RATHORE
+    </text>
+
+    <!-- Cyan Underline Accent -->
+    <path d="M 0 92 L 480 92" stroke="url(#accentLine)" stroke-width="2.5" />
+    <polygon points="480,90 488,92 480,94" fill="#00F0FF" />
+
+    <!-- Engineering Title -->
+    <text x="0" y="118" fill="#38BDF8" font-size="14" font-weight="600" letter-spacing="2.5" font-family="monospace">
+      ROBOTICS &amp; CONTROL SYSTEMS  •  MACHINE INTELLIGENCE  •  EMBEDDED C++
+    </text>
+
+    <!-- Engineering Statement -->
+    <text x="0" y="146" fill="#94A3B8" font-size="11.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" letter-spacing="0.3">
+      Building real-time cyber-physical systems, teleoperated mobile rover platforms,
+    </text>
+    <text x="0" y="164" fill="#94A3B8" font-size="11.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" letter-spacing="0.3">
+      and intelligent perception pipelines that bridge embedded silicon with applied AI.
+    </text>
+
+    <!-- Core Engineering Focus Chips / Tech Domains -->
+    <g transform="translate(0, 192)">
+      <!-- Domain 1 -->
+      <g transform="translate(0, 0)">
+        <rect x="0" y="0" width="220" height="34" fill="#0A1326" stroke="#00F0FF" stroke-width="0.8" stroke-opacity="0.4" rx="4" />
+        <path d="M 0 0 L 4 0 L 0 4 Z" fill="#00F0FF" />
+        <circle cx="14" cy="17" r="2.5" fill="#00F0FF" />
+        <text x="24" y="15" fill="#38BDF8" font-size="8.5" font-weight="700" font-family="monospace">SYSTEM 01</text>
+        <text x="24" y="27" fill="#F8FAFC" font-size="10.5" font-weight="600" font-family="-apple-system, sans-serif">Embedded Rover Control</text>
+      </g>
+
+      <!-- Domain 2 -->
+      <g transform="translate(230, 0)">
+        <rect x="0" y="0" width="240" height="34" fill="#0A1326" stroke="#0066FF" stroke-width="0.8" stroke-opacity="0.6" rx="4" />
+        <path d="M 0 0 L 4 0 L 0 4 Z" fill="#0066FF" />
+        <circle cx="14" cy="17" r="2.5" fill="#0066FF" />
+        <text x="24" y="15" fill="#60A5FA" font-size="8.5" font-weight="700" font-family="monospace">SYSTEM 02</text>
+        <text x="24" y="27" fill="#F8FAFC" font-size="10.5" font-weight="600" font-family="-apple-system, sans-serif">Edge IoT Threat Defense &amp; RAG</text>
+      </g>
+
+      <!-- Domain 3 -->
+      <g transform="translate(480, 0)">
+        <rect x="0" y="0" width="240" height="34" fill="#0A1326" stroke="#00F0FF" stroke-width="0.8" stroke-opacity="0.4" rx="4" />
+        <path d="M 0 0 L 4 0 L 0 4 Z" fill="#00F0FF" />
+        <circle cx="14" cy="17" r="2.5" fill="#00F0FF" />
+        <text x="24" y="15" fill="#38BDF8" font-size="8.5" font-weight="700" font-family="monospace">SYSTEM 03</text>
+        <text x="24" y="27" fill="#F8FAFC" font-size="10.5" font-weight="600" font-family="-apple-system, sans-serif">Computer Vision &amp; Gesture ML</text>
+      </g>
+    </g>
+
+    <!-- Bottom Tech Stack Specification -->
+    <text x="0" y="252" fill="#475569" font-size="9" font-family="monospace" letter-spacing="1">
+      CORE STACK: C++ • PYTHON • ESP32 • ARDUINO • SCIKIT-LEARN • OPENCV • FASTAPI • MQTT
+    </text>
+  </g>
+</svg>
